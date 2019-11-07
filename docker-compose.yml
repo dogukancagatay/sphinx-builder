@@ -1,0 +1,10 @@
+version: '3'
+services:
+  docs:
+    build: ./
+    image: dcagatay/sphinx-builder:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./sample-docs:/docs
+    command: make livehtml
