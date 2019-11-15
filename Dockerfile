@@ -3,13 +3,15 @@ MAINTAINER Dogukan Cagatay <dcagatay@gmail.com>
 
 ENV DISPLAY ":0.0"
 
-RUN apt-get update && apt-get install --no-install-recommends --yes \
+RUN sh -c 'echo "deb [arch=amd64] http://deb.debian.org/debian buster contrib" >> /etc/apt/sources.list.d/debian-contrib.list' && \
+  apt-get update && apt-get install --no-install-recommends --yes \
 	curl \
 	make \
 	supervisor \
 	latexmk \
 	texlive-fonts-recommended \
 	texlive-latex-extra \
+  ttf-mscorefonts-installer \
 	libgtk-3-0 \
 	libnotify4 \
 	libnss3 \
