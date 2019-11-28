@@ -2,6 +2,7 @@ FROM python:3.8
 MAINTAINER Dogukan Cagatay <dcagatay@gmail.com>
 
 ENV DISPLAY ":0.0"
+ENV DEBIAN_FRONTEND "noninteractive"
 
 RUN sh -c 'echo "deb [arch=amd64] http://deb.debian.org/debian buster contrib" >> /etc/apt/sources.list.d/debian-contrib.list' && \
   apt-get update && apt-get install --no-install-recommends --yes \
