@@ -2,7 +2,7 @@
 
 set -e
 
-python -m pip install -r requirements.txt
+test -f requirements.txt && python -m pip install -r requirements.txt
 
 echo "Initializing ..."
 supervisord -n -c /etc/supervisord.conf &> /dev/null &
